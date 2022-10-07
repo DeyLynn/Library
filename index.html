@@ -7,6 +7,42 @@
   <script src='./script.js' defer></script>
 </head>
 <body>
-  
+  <div class='bg-image'></div>
+  <input type='button' class='trigger' id='new' value='new book'>
+  <div class='modal'>
+    <div class='modal-content'>
+      <span class='close-button'>&times;</span>
+      <form action='' method='post'>
+        <h1>New Book</h1>
+        <div>
+          <label for='title'>Title: </label>
+          <input type='text' id='title' name='title' required>
+          <span class='req-tag'></span>
+        </div>
+        <div>
+          <label for='author'>Author: </label>
+          <input type='text' id='author' name='author' required>
+          <span class='req-tag'></span>
+        </div>
+        <div>
+          <label for='current-page'>Current Page: </label>
+          <input type='number' id='current-page' name='current-page' min='0' step='1' required>
+          <span class='req-tag'></span>
+        </div>
+        <div>
+          <label for='total-pages'>Total Pages: </label>
+          <input type='number' min='0' step='1' id='total-pages' required>
+          <span class='req-tag'></span>
+        </div>
+        <div>
+          <input type='button' value='add'>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class='container'>
+    <div class='card-container'>
+    </div>
+  </div>
 </body>
 </html>

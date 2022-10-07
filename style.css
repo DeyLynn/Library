@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.bg-image {
+  position: absolute;
+  top: 130px;
+  left: 50px;
+  width: 75%;
+  transform: rotate(-7deg);
+  height: 75%;
+  background: url('./imgs/Goodies\ -\ Ok.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 65%;
+}
+
+
+.container {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  box-shadow: inset 60px 60px 150px black;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 220px 1fr;
+  background-color: #4c1d9f;
+  align-content: center;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin: 100px 50px;
+}
+
+#new {
+  position: fixed;
+  top: 30px;
+  left: 80%;
+  width: 150px;
+  height: 50px;
+  background-color: #db2777;
+  box-shadow:  8px 3px 10px black;
+  border-radius: 10px;
+  transition: 0.5s all;
+  font-size: 1.2rem;
+}
+
+#new:active,
+form > div > input[type='button']:active {
+  transform: scale(0.9);
+}
+
+.text-block {
+  display: grid;
+  justify-items: center;
+  grid-template-rows: 3fr 1fr;
+}
+
+.delete-button,
+.read-button {
+  display: inline-block;
+  background-color: yellow;
+  color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  width: 120px;
+  height: 40px;
+  border: 1px solid yellow;
+  border-radius: 3px;
+}
+
+.delete-button:active {
+  transform: scale(0.9);
+}
+
+.book-card {
+  position: relative;
+  width: 300px;
+  height: 175px;
+  border-radius: 10px;
+  border: 2px solid goldenrod;
+  background-color: purple;
+  color: white;
+  font-size: 1.5rem;
+  z-index: 1;
+  opacity: 95%;
+
+  display: grid;
+  text-align: center;
+  align-content: center;
+}
+
+.button-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.trigger {
+  appearance: none;
+  border: none;
+}
+
+form > div > label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+form > div:not(:last-of-type) {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+
+form > div:last-of-type {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: end;
+}
+
+
+form > div:first-of-type {
+  margin-top: 2rem;
+}
+
+form > div > input {
+  appearance: none;
+  height: 1.8rem;
+  border-radius: 0.3rem;
+  border: 2px solid black;
+  padding: 5px 0.5rem;
+}
+
+form > div:not(:last-of-type) > input {
+  outline: none;
+  box-shadow: inset 4px 4px 18px lightgrey;
+}
+
+form > div > input:focus {
+  border: 2px solid hotpink;
+}
+
+
+
+
+
+form > div > input[type='button'] {
+  width: 120px;
+  height: 40px;
+  background-color: #db2777;
+  border: none;
+  border-radius: 10px;
+  transition: 0.5s all;
+  font-size: 1.2rem;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  z-index: 2;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 28rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.modal-content > span {
+  align-self: end;
+}
+
+.modal-content h1 {
+  text-align: center;
+}
+
+
+.close-button {
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: purple;
+  color: white;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
